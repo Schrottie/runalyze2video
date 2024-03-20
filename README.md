@@ -21,9 +21,9 @@ The path to the script must of course be adapted. A brief explanation of the ent
 
 ## Wishlist
 
-> Intro and individual clips could also be faded in or - even better - cross-faded.
-> It would be extremely cool if the diagram were built up analogously to the individual data record clips and did not appear complete right from the start.
-> Until the runalyze API also offers read access, this variant is the only practicable way to access the data. You can now also go directly to the JSON endpoint, but this requires you to authenticate yourself to runalyze.com. Again, this is not entirely trivial, so if anyone has an idea for this, please let me know.
+* Intro and individual clips could also be faded in or - even better - cross-faded.
+* It would be extremely cool if the diagram were built up analogously to the individual data record clips and did not appear complete right from the start.
+* Until the runalyze API also offers read access, this variant is the only practicable way to access the data. You can now also go directly to the JSON endpoint, but this requires you to authenticate yourself to runalyze.com. Again, this is not entirely trivial, so if anyone has an idea for this, please let me know.
 Then I would use a local database for data storage and the creation of the video would be much more convenient (certain time periods, certain sports, etc.).
 
 ## Biking?
