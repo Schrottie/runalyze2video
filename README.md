@@ -12,11 +12,11 @@ The following crontab entry is recommended for this:
 
 The path to the script must of course be adapted. A brief explanation of the entry:
 
-**Minute:** 0 - The minute in which the command is executed. In this case 59 minutes after the 23rd hour.
-**Hour:** 23 - The hour in which the command is executed. In this case 11 pm.
-**Day:** L - The day of the month on which the command is executed. In this case L for the last day of the month.
-**Month:** * - The month in which the command is executed. In this case * for each month.
-**Day of the week:** * - The day of the week on which the command is executed. In this case * for each day of the week.
+**Minute:** 0 - The minute in which the command is executed. In this case 59 minutes after the 23rd hour.<br>
+**Hour:** 23 - The hour in which the command is executed. In this case 11 pm.<br>
+**Day:** L - The day of the month on which the command is executed. In this case L for the last day of the month.<br>
+**Month:** * - The month in which the command is executed. In this case * for each month.<br>
+**Day of the week:** * - The day of the week on which the command is executed. In this case * for each day of the week.<br>
 **Command:** /home/user/runalyze2video/python.py - The path to the Python script to be executed.
 
 ## Wishlist
