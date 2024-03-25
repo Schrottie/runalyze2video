@@ -23,9 +23,9 @@ Der Pfad zum Skript muss natürlich angepasst werden. Und jetzt noch eine kurze 
 
 Wenn die Fehlerliste abgearbeitet ist, könnte ich mir noch folgende Funktionen vorstellen:
 
-> Intro und individuelle Clips könnten auch eingefadet oder - noch besser - überblendet werden.
-> Es wäre extrem cool, wenn das Diagramm analog zu den einzelnen Datensatzclips aufgebaut würde und nicht sofort vollständig erscheinen würde.
-> Eine Übersichtsseite mit den Titeln der verarbeiteten Aktivitäten wäre ebenso cool, hier muss dann zunächst für jede Zeile die Schriftgröße berechnet und dann alles zusammengeklöppelt werden.
+- Intro und individuelle Clips könnten auch eingefadet oder - noch besser - überblendet werden.
+- Es wäre extrem cool, wenn das Diagramm analog zu den einzelnen Datensatzclips aufgebaut würde und nicht sofort vollständig erscheinen würde.
+- Eine Übersichtsseite mit den Titeln der verarbeiteten Aktivitäten wäre ebenso cool, hier muss dann zunächst für jede Zeile die Schriftgröße berechnet und dann alles zusammengeklöppelt werden.
 
 ## Radfahren?
 
