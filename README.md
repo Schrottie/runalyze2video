@@ -12,11 +12,11 @@ Hier ein Beispieeintrag für die crontab:
 
 Der Pfad zum Skript muss natürlich angepasst werden. Und jetzt noch eine kurze Erklärung des Eintrags:
 
-**Minute:** 0 - Die Minute, in der der Befehl ausgeführt wird. In diesem Fall 59 Minuten nach der 23. Stunde.
-**Stunde:** 23 - Die Stunde, in der der Befehl ausgeführt wird. In diesem Fall 23 Uhr.
-**Tag:** L - Der Tag des Monats, an dem der Befehl ausgeführt wird. In diesem Fall L für den letzten Tag des Monats.
-**Monat:** * - Der Monat, in dem der Befehl ausgeführt wird. In diesem Fall * für jeden Monat.
-**Wochentag:** * - Der Wochentag, an dem der Befehl ausgeführt wird. In diesem Fall * für jeden Wochentag.
+**Minute:** 0 - Die Minute, in der der Befehl ausgeführt wird. In diesem Fall 59 Minuten nach der 23. Stunde.<br/>
+**Stunde:** 23 - Die Stunde, in der der Befehl ausgeführt wird. In diesem Fall 23 Uhr.<br/>
+**Tag:** L - Der Tag des Monats, an dem der Befehl ausgeführt wird. In diesem Fall L für den letzten Tag des Monats.<br/>
+**Monat:** * - Der Monat, in dem der Befehl ausgeführt wird. In diesem Fall * für jeden Monat.<br/>
+**Wochentag:** * - Der Wochentag, an dem der Befehl ausgeführt wird. In diesem Fall * für jeden Wochentag.<br/>
 **Befehl:** /home/user/runalyze2video/python.py - Der Pfad zum auszuführenden Python-Skript.
 
 ## Wishlist
