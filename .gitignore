@@ -163,5 +163,6 @@ cython_debug/
 #.idea/
 
 *Thumbs.db
+stuff/Thumbs.db
 tmp/*
 movies/*

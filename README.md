@@ -33,4 +33,4 @@ Ja sicher, warum auch nicht. Der Datendownload enthält alles, was runalyze.com 
 
 ## Helfen?
 
-Aber sicher doch, Hilfe wird definitiv benötigt. Also nur zu!  
+Aber sicher doch, Hilfe wird definitiv benötigt. Also nur zu!
