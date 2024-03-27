@@ -118,3 +118,95 @@ def extract_activity_data():
     
     # Give me the dataframe!
     return df
+
+def dataframe_to_sqlite(df, db_file):
+    # Verbindung zur SQLite-Datenbank herstellen
+    conn = sqlite3.connect(db_file)
+    cursor = conn.cursor()
+
+    # Tabelle erstellen, wenn sie noch nicht existiert
+    cursor.execute('''CREATE TABLE IF NOT EXISTS runalyze_activities (
+                        ID INTEGER PRIMARY KEY,
+                        date TEXT,
+                        distance REAL,
+                        duration TEXT,
+                        duration_minutes TEXT,
+                        pace TEXT,
+                        r_type TEXT
+                    )''')
+
+    # Index erstellen, um sicherzustellen, dass die ID eindeutig ist
+    cursor.execute('''CREATE UNIQUE INDEX IF NOT EXISTS idx_unique_id ON runalyze_activities (ID)''')
+
+    # Daten aus dem DataFrame in die Datenbanktabelle einfügen
+    for index, row in df.iterrows():
+        # ID aus numerischen Zeichen von 'date' und 'distance' generieren
+        ID = int(''.join(filter(str.isdigit, row['date'] + str(row['distance']))))
+
+        # Daten in die Tabelle einfügen
+        cursor.execute('''INSERT OR IGNORE INTO runalyze_activities (ID, date, distance, duration, duration_minutes, pace, r_type)
+                          VALUES (?, ?, ?, ?, ?, ?, ?)''', (ID, row['date'], row['distance'], row['duration'], row['pace'], row['r_type']))
+
+    # Änderungen speichern und Verbindung schließen
+    conn.commit()
+    conn.close()
+
+
+    # Function for runalyze-login 
+def login_with_username_password():
+    
+    load_dotenv()
+    username = os.getenv('RUNALYZE_USERNAME')
+    password = os.getenv('RUNALYZE_PASSWORD')
+    
+    login_url = 'https://runalyze.com/login'
+    session = requests.Session()
+    
+    # HTML-Inhalt der Login-Seite holen
+    response = session.get(login_url)
+    html_content = response.text
+    
+    # CSRF-Token extrahieren
+    csrf_token_match = re.search(r'<input[^>]*name=["\']?_csrf_token["\']?[^>]*value=["\']?([^"\'>\s]+)', html_content)
+
+    if csrf_token_match:
+        csrf_token = csrf_token_match.group(1)
+    else:
+        print("CSRF-Token konnte nicht gefunden werden.")
+        return None
+    
+    # Anmelden
+    payload = {
+        '_username': username,
+        '_password': password,
+        '_remember_me' : 'off',
+        '_csrf_token': csrf_token
+    }
+    response = session.post(login_url, data=payload)
+
+    # Überprüfen, ob die Anmeldung erfolgreich war
+    if response.status_code == 200:
+        print("Anmeldung erfolgreich!")
+        return session
+    else:
+        print(f"Anmeldung fehlgeschlagen. Statuscode: {response.status_code}")
+        return None
+
+def fetch_activities_csv(session, csv_file):
+    csv_url = 'https://runalyze.com/_internal/data/activities/all'
+    
+    # Die CSV-Datei mit allen Daten abholen
+    response = session.get(csv_url)
+    
+    # Überprüfen, ob der Abruf erfolgreich war
+    if response.status_code == 200:
+        with open(csv_file, 'wb') as f:
+            f.write(response.content)
+        print("CSV-Datei erfolgreich heruntergeladen.")
+    else:
+        print("Fehler beim Abrufen der CSV-Datei.")
+
+# # Beispielaufruf
+# session = login_with_username_password()
+# if session:
+#      fetch_activities_csv(session, csv_file)
