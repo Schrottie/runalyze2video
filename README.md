@@ -2,6 +2,15 @@
 
 Python-Tool, das die Daten eines bei runalyze.com eingeloggten Benutzers vom dortigen JSON-Endpunk lädt, in eine Datenbank schreibt und die Laufaktivitäten in einem Video verarbeitet (z. B. für die Instagram-Story). Das Video hat ein Balkendiagramm unten, das die ausgewerteten Aktivitäten zeigt, während die einzelnen Läufe und anschließend eine Zusammenfassung oben angezeigt werden.
 
+## Verwendung
+
+Einfach alle benötigten Module installieren, sofern es noch nicht geschehen ist und anschließend fix die Zugangsdaten für Runalyze in einer Datei namens `.env` hinterlegen. Dazu einfach im Programmverzeichnis eine Datei mit diesem Namen anlegen, die folgenden Inhalt haben muss:
+
+>RUNALYZE_USERNAME=$username
+>RUNALYZE_PASSWORD=$password
+
+Diese Datei ist erforderlich, damit sich das Programm bei Runalyze einloggen kann, denn nur in eingeloggtem Zustand wird an JSON-Endpunkt auch ein Datenpaket ausgeliefert. Dann führt man das Programm entweder in VS Code aus, oder man speichert es als Pythonscript und startet es im Terminal bzw. auf der Kommandozeile.
+
 ## Ausführung auf Raspi
 
 Ich benutze das Skript mit einem Raspberry Pi. Dort kann das Script dann mittels crontab automatisch laufen und das Video regelmäßig erzeugen.
