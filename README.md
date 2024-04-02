@@ -6,7 +6,7 @@ Python-Tool, das die Daten eines bei runalyze.com eingeloggten Benutzers vom dor
 
 Einfach alle benötigten Module installieren, sofern es noch nicht geschehen ist und anschließend fix die Zugangsdaten für Runalyze in einer Datei namens `.env` hinterlegen. Dazu einfach im Programmverzeichnis eine Datei mit diesem Namen anlegen, die folgenden Inhalt haben muss:
 
->RUNALYZE_USERNAME=$username
+>RUNALYZE_USERNAME=$username<br/>
 >RUNALYZE_PASSWORD=$password
 
 Diese Datei ist erforderlich, damit sich das Programm bei Runalyze einloggen kann, denn nur in eingeloggtem Zustand wird an JSON-Endpunkt auch ein Datenpaket ausgeliefert. Dann führt man das Programm entweder in VS Code aus, oder man speichert es als Pythonscript und startet es im Terminal bzw. auf der Kommandozeile.
