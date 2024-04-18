@@ -4,12 +4,18 @@ Python-Tool, das die Daten eines bei runalyze.com eingeloggten Benutzers vom dor
 
 ## Verwendung
 
-Einfach alle benötigten Module installieren, sofern es noch nicht geschehen ist und anschließend fix die Zugangsdaten für Runalyze in einer Datei namens `.env` hinterlegen. Dazu einfach im Programmverzeichnis eine Datei mit diesem Namen anlegen, die folgenden Inhalt haben muss:
+Einfach alle benötigten Module installieren, sofern es noch nicht geschehen ist und anschließend fix die Zugangsdaten für Runalyze in einer Datei namens `.env` hinterlegen. Dazu einfach im Programmverzeichnis eine Datei mit diesem Namen anlegen, die die Zugangsdaten zu runalyze.com enthält.
+
+#### Installation der Module:
+
+`pip install requests pandas matplotlib moviepy numpy python-opencv pillow pytz datetime tzlocal dotenv pyrebase sqlite3`
+
+#### Aufbau der .env:
 
 >RUNALYZE_USERNAME=$username<br/>
 >RUNALYZE_PASSWORD=$password
 
-Diese Datei ist erforderlich, damit sich das Programm bei Runalyze einloggen kann, denn nur in eingeloggtem Zustand wird an JSON-Endpunkt auch ein Datenpaket ausgeliefert. Dann führt man das Programm entweder in VS Code aus, oder man speichert es als Pythonscript und startet es im Terminal bzw. auf der Kommandozeile.
+Die .env-Datei ist erforderlich, damit sich das Programm bei Runalyze einloggen kann, denn nur in eingeloggtem Zustand wird an JSON-Endpunkt auch ein Datenpaket ausgeliefert. Dann führt man das Programm entweder in VS Code aus, oder man speichert es als Pythonscript und startet es im Terminal bzw. auf der Kommandozeile.
 
 ## Ausführung auf Raspi
 
