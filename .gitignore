@@ -1,5 +1,6 @@
 # Databases
 *.db
+!/stuff/runalyze_data_empty.db
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
