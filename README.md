@@ -17,6 +17,23 @@ Einfach alle benötigten Module installieren, sofern es noch nicht geschehen ist
 
 Die .env-Datei ist erforderlich, damit sich das Programm bei Runalyze einloggen kann, denn nur in eingeloggtem Zustand wird an JSON-Endpunkt auch ein Datenpaket ausgeliefert. Dann führt man das Programm entweder in VS Code aus, oder man speichert es als Pythonscript und startet es im Terminal bzw. auf der Kommandozeile.
 
+## Ausführung auf der Kommandozeile
+
+Das Programm kann als *.py gespeichert und dann mit allerlei Argumenten auf der Kommandozeile gestartet werden:
+
+- **run_mode** # 1 letzte Kalenderwoche, 2 letzter Kalendermonat, 3 Benutzerdefinierter Bereich, Start und Ende erforderlich! (Standard: 1)
+- **sportid** # 800522 = Laufen / 800524 = Radfahren / 800528 = Wandern (Standard: 800522)
+- **background_sound** # Hintergrundmusik für das Video (Standard: stuff/fleawaltz_fast.mp3)
+- **start_date_string** # Startdatum im Format JJJJ-MM-TT (Standard: 2024-01-01)
+- **end_date_string** # Enddatum im Format JJJJ-MM-TT (Standard: 2024-01-10)
+- **max_download_frequency** # Maximale Downloadfrequenz vom Runalyze JSON-Endpunkt in Stunden (Standard: 23)
+
+Der Aufruf erfolgt dann zum Beispiel mittels:
+
+`python .\runalyze2video.py --run_mode 2 --sportid 800522 --background_sound stuff/PinkPanther.mp3 --max_download_frequency 5`
+
+Start- und Enddatum sind nur beim run_mode 3 erforderlich. Fehlen sie beim Aufruf, werden einfach Standardwerte gesetzt, die aber keinen Einfluß auf den Programmablauf haben.
+
 ## Ausführung auf Raspi
 
 Ich benutze das Skript mit einem Raspberry Pi. Dort kann das Script dann mittels crontab automatisch laufen und das Video regelmäßig erzeugen.
