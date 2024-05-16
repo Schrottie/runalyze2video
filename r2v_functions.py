@@ -93,3 +93,5 @@ def install_reqs(db_filename):
                 print("Tabelle 'requirements' enthält keine Einträge.")
         else:
             print("Tabelle 'requirements' existiert nicht.")
+
+
